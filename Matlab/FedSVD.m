@@ -63,7 +63,7 @@ for i = 1:num_partitions
 end
 
 
-%ALT SER UT TIL Å STEMME!
+%ALT SER UT TIL Å STEMME! Dette er til testetuten
 %Test that the mask are actually removable by checking that 
 %X_ is equal to X when the masks are removed.
 % "Check if the reconstructed partitions are equal to the original Xi"
