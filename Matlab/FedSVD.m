@@ -16,10 +16,10 @@ mu = 1;
 sigma = 1;
 
 A_1 = normrnd(mu,sigma, m, m);
-[P, R_1] = qr(A_1);
+[P, ~] = qr(A_1);
 
 A_2 = normrnd(mu, sigma, n, n);
-[Q, R_2] = qr(A_2);
+[Q, ~] = qr(A_2);
 
 Qi = {};
 for i = 1:num_partitions
@@ -56,10 +56,21 @@ V_i = {};
 Vi = {};
 
 %this removal works, but may lead to privacy issues. see ch. 3.3
-%THERE MUST BE AN ERROR IN THE RESEARCH PAPER
+%THERE MUST BE AN ERROR IN THE RESEARCH PAPER. Yes, but this here works. This
+% is my solution.
 for i = 1:num_partitions
-    V_i{i} = (Qi{i}'*V_')';
+    Vi{i} = Qi{i}*V_;
 end
 
+
+%ALT SER UT TIL Å STEMME!
 %Test that the mask are actually removable by checking that 
 %X_ is equal to X when the masks are removed.
+% "Check if the reconstructed partitions are equal to the original Xi"
+% "diff Xi:"
+% for i = 1:num_partitions
+%     norm((Xi{i} - U*S*Vi{i}'), "fro")
+% end
+% Xtest = U*S*[Vi{1}' Vi{2}' Vi{3}'];
+% 
+% resultat = norm((X-Xtest), "fro")
