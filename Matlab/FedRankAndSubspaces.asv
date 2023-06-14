@@ -1,0 +1,16 @@
+function [] = FedRankAndSubspaces(Ai)
+    Xi = {};
+    num_partitions = length(Ai);
+    for i = 1:num_partitions
+        Xi{i} = Ai{i}';
+    end
+
+    [U, S, Vi] = FedSVD(Xi);
+
+    [m,n] = size(S);
+
+    p = min(m,n);
+    rank = nnz(S);
+    
+    range = U;
+end

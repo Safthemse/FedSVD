@@ -38,19 +38,16 @@ end
 "Test if found solution to the Total Least Squares Minimization Problem"
 norm(A*x,2)
 
-% %Use case 2: Federated Computation of Rank and Fundamental Subspaces
-% %preparing the data matrix Ai and input matrix Xi for each user i
-% %arbitrary number of equal partitions
-% [m, n] = size(A);
-% num_partitions = 3;
-% size_partitions = floor(n/num_partitions);
-% 
-% Ai = {};
-% for i = 1:num_partitions
-%     Ai{i} = A(:,(1+(i-1)*size_partitions):(i*size_partitions));
-% end
-% 
-% Xi = {};
-% for i = 1:num_partitions
-%     Xi{i} = Ai{i};
-% end
+%Use case 2: Federated Computation of Rank and Fundamental Subspaces
+%preparing the data matrix Ai and input matrix Xi for each user i
+%arbitrary number of equal partitions
+[m, n] = size(A);
+num_partitions = 3;
+size_partitions = floor(n/num_partitions);
+
+Ai = {};
+for i = 1:num_partitions
+    Ai{i} = A(:,(1+(i-1)*size_partitions):(i*size_partitions));
+end
+
+[orthogonal_basis_A, orthogonal_basis_left_nullspace_A, r, p] = FedRankAndSubspaces(Ai);
