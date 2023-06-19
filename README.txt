@@ -7,7 +7,9 @@ FedTLS.m
 FedRankAndSubspaces.m
 testFunctions.m
 
-Variables:
+The repository also includes the files iris.data and iris.names which is the data used for testing the algorithms. This data is converted into iris.csv, which is then used by the .m-files. The data set is retrieved from the UC Irvine Machine Learning Repository: https://archive.ics.uci.edu/dataset/53/iris
+
+Some important variables:
 Ai: the data of user i
 A: the total data matrix consisting of the data of all users i.
 Xi: the input matrix for each user i
