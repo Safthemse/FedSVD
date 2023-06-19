@@ -2,7 +2,7 @@ function [orthogonal_basis_A, orthogonal_basis_left_nullspace_A, r, p] = FedRank
     Xi = {};
     num_partitions = length(Ai);
     for i = 1:num_partitions
-        Xi{i} = Ai{i}';
+        Xi{i} = Ai{i};
     end
 
     [U, S, Vi] = FedSVD(Xi);
