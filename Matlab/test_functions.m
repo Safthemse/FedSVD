@@ -21,6 +21,11 @@ end
 
 [U, S, Vi] = FedSVD(Xi);
 
+%Reconstruct matrices
+for i = 1:num_partitions
+    norm(Ai{i} - U*S*Vi{i}, 2);
+end
+
 %Use case 1: Federated Total Least Squares Minimization
 %preparing the data matrix Ai and input matrix Xi for each user i
 %arbitrary number of equal partitions

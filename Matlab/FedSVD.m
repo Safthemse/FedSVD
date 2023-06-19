@@ -64,6 +64,6 @@ function [U, S, Vi] = FedSVD(Xi)
     %ch. 3.3 in Chai et al. The following is my solution, since there
     %were some issues with dimensions in Chai et al.
     for i = 1:num_partitions
-        Vi{i} = Qi{i}*V_;
+        Vi{i} = (Qi{i}*V_)';
     end
 end

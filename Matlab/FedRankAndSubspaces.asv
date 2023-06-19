@@ -1,4 +1,4 @@
-function [] = FedRankAndSubspaces(Ai)
+function [orthogonal_basis_A, orthogonal_basis_left_nullspace_A, r, p] = FedRankAndSubspaces(Ai)
     Xi = {};
     num_partitions = length(Ai);
     for i = 1:num_partitions
@@ -8,9 +8,12 @@ function [] = FedRankAndSubspaces(Ai)
     [U, S, Vi] = FedSVD(Xi);
 
     [m,n] = size(S);
+    s = reshape(S,[1,n*m])
 
     p = min(m,n);
-    rank = nnz(S);
+    r = 0;
+    f
     
-    range = U;
+    orthogonal_basis_A = U(:,1:r);
+    orthogonal_basis_left_nullspace_A = U(:,r+1:m);
 end
