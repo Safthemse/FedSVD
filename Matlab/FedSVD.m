@@ -1,11 +1,11 @@
 %Naming conventions:
-%Xi is the input matrix for each user i
-%X is the whole data matrix, composed like X = [X1 ... Xi ... Xk]
-%P is the left hand masking matrix
-%Qi is the right masking matrix for user i
-%Q is the whole right masking matrix, composed like Q' = [Q1' ... Qi' ... Qk']
-%X_i is the masked input matrix for user i, X_i = P*X_i*Q_i
-%X_ is the whole masked data matrix, composed like X_ = P*[X1 ... Xi ... Xk]*[Q1' ... Qi' ... Qk']
+% Xi: the input matrix for each user i
+% X: the whole data matrix, composed like X = [X1 ... Xi ... Xk]
+% P: the left hand masking matrix
+% Qi: the right masking matrix for user i
+% Q: the whole right masking matrix, composed like Q' = [Q1' ... Qi' ... Qk']
+% X_i: the masked input matrix for user i, X_i = P*X_i*Q_i
+% X_: the whole masked data matrix, composed like X_ = P*[X1 ... Xi ... Xk]*[Q1' ... Qi' ... Qk']
 
 function [U, S, Vi] = FedSVD(Xi)
 
