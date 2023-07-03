@@ -1,4 +1,4 @@
-%Prepare and partition the data in A
+%Prepare and partition the data in A 
 iris = readtable("iris.csv");
 A = table2array(iris(:,1:end))';
 

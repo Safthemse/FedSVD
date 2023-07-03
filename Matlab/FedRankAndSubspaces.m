@@ -1,5 +1,5 @@
 function [orthogonal_basis_A, orthogonal_basis_left_nullspace_A, r, p] = FedRankAndSubspaces(Ai)
-    Xi = {};
+    Xi = {}; 
     num_partitions = length(Ai);
     for i = 1:num_partitions
         Xi{i} = Ai{i};
